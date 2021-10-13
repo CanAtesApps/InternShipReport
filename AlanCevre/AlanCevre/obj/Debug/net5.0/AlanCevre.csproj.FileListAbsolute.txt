@@ -1,0 +1,16 @@
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.exe
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.deps.json
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.runtimeconfig.json
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.runtimeconfig.dev.json
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.dll
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\ref\AlanCevre.dll
+C:\Users\test\source\repos\AlanCevre\AlanCevre\bin\Debug\net5.0\AlanCevre.pdb
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.csproj.AssemblyReference.cache
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.AssemblyInfoInputs.cache
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.AssemblyInfo.cs
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.csproj.CoreCompileInputs.cache
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.dll
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\ref\AlanCevre.dll
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.pdb
+C:\Users\test\source\repos\AlanCevre\AlanCevre\obj\Debug\net5.0\AlanCevre.genruntimeconfig.cache

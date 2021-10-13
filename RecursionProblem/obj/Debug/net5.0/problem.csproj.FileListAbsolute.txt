@@ -1,0 +1,16 @@
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.exe
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.deps.json
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.runtimeconfig.json
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.runtimeconfig.dev.json
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.dll
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\ref\problem.dll
+C:\Users\test\Desktop\CleanCode\problem\bin\Debug\net5.0\problem.pdb
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.csproj.AssemblyReference.cache
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.AssemblyInfoInputs.cache
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.AssemblyInfo.cs
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.csproj.CoreCompileInputs.cache
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.dll
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\ref\problem.dll
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.pdb
+C:\Users\test\Desktop\CleanCode\problem\obj\Debug\net5.0\problem.genruntimeconfig.cache

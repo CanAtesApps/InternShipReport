@@ -1,0 +1,16 @@
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.exe
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.deps.json
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.runtimeconfig.json
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.runtimeconfig.dev.json
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.dll
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\ref\MemoryCardGame.dll
+C:\Users\test\source\repos\MemoryCardGame\bin\Debug\net5.0\MemoryCardGame.pdb
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.csproj.AssemblyReference.cache
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.AssemblyInfoInputs.cache
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.AssemblyInfo.cs
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.csproj.CoreCompileInputs.cache
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.dll
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\ref\MemoryCardGame.dll
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.pdb
+C:\Users\test\source\repos\MemoryCardGame\obj\Debug\net5.0\MemoryCardGame.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.exe
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.deps.json
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.runtimeconfig.json
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.runtimeconfig.dev.json
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.dll
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\ref\Pascal.dll
+C:\Users\test\source\repos\Pascal\bin\Debug\net5.0\Pascal.pdb
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.csproj.AssemblyReference.cache
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.AssemblyInfoInputs.cache
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.AssemblyInfo.cs
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.csproj.CoreCompileInputs.cache
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.dll
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\ref\Pascal.dll
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.pdb
+C:\Users\test\source\repos\Pascal\obj\Debug\net5.0\Pascal.genruntimeconfig.cache
