@@ -1,0 +1,111 @@
+<head>
+<link
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+  rel="stylesheet"  type='text/css'>
+</head>
+<body>
+<div class="container">
+
+  <div class="row mt-3" >
+    <div class="col-md-10">
+      <div class="input-group ">
+
+        <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Aranacak kelimeyi girin">
+        <button class="btn btn-outline-secondary btn-light" (click)="filtrele()"><span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span></button>
+      </div>
+  </div>
+    <div class="col-md-2 ml-auto" >
+      <button type="button" style="width:100%" class="btn btn-outline-secondary btn-light" [routerLink]="['/tasinmazEkle']" routerLinkActive="router-link-active" >Taşınmaz Ekle</button>
+    </div>
+  </div>
+
+  <table class="table table-light mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th >il</th>
+        <th >ilce</th>
+        <th >Mahalle</th>
+        <th >Ada</th>
+        <th >Parsel</th>
+        <th >Nitelik</th>
+        <th >Adres</th>
+        <th ></th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let tas of tasinmazlar">
+        <td>{{tas.cityName}}</td>
+        <td>{{tas.countyName}}</td>
+        <td>{{tas.areaName}}</td>
+        <td>{{tas.ada}}</td>
+        <td>{{tas.parsel}}</td>
+        <td>{{tas.nitelik}}</td>
+        <td>{{tas.adres}}</td>
+        <td>
+          <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-secondary" (click)="guncelle(tas)">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" (click)="sil(tas)">Sil</button>
+            <button type="button" class="btn btn-outline-secondary"(click)="raporla(tas)">Raporla</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <select id="inputPage"
+            class="form-control"
+            (change)="onChangeSelect($event.target.value)">
+            <option [value]=0>Sayfa Secin</option>
+            <option *ngFor="let item of counter(); index as i"[value]='item'>{{item}}</option>
+        </select>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="previousPage()"  [disabled]="previousButtonDisable()" >Önceki</button>
+      </li>
+        <li class="page-item">
+          <a class="page-link" >{{currentPage}}</a>
+        </li>
+      <li class="page-item">
+        <button class="page-link" (click)="nextPage()" [disabled]="nextButtonDisable()">Sonraki</button>
+      </li>
+    </ul>
+  </nav>
+ </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tasinmaz Silme</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Tasinmazi silmek istediginze emin misiniz?</p>
+       <div class="container">
+        <ul class="list-group" *ngIf="SelectedTasinmaz" style="width:inherit">
+
+            <li class="list-group-item">{{SelectedTasinmaz.cityName}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.countyName}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.areaName}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.ada}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.parsel}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.nitelik}}</li>
+            <li class="list-group-item">{{SelectedTasinmaz.adres}}</li>
+
+        </ul>
+       </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center ">
+        <button type="button" class="btn btn-danger" (click)="confirmedDelete()" data-dismiss="modal">Sil</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Iptal</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+

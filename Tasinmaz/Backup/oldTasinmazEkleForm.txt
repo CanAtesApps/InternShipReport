@@ -1,0 +1,67 @@
+<div class="container mt-5" >
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form">
+    <div class="row mt-3" >
+      <div class="form-group col-md-6">
+        <label for="inputIl" >Il Seciniz</label>
+        <select id="inputIl" class="form-select"
+        (change)="onChangeIlSelect($event.target.value)"
+        required
+        [(ngModel)]="model.cityID" name="selectedIl">
+          <option selected>İl Seçiniz</option>
+          <option *ngFor="let item of iller; index as i"[value]='item.cityID'>{{item.cityName}}</option>
+        </select>
+
+
+
+
+        <label for="inputIlce" class="mt-5" >Ilce Seciniz</label>
+        <select id="inputIlce" class="form-select"(change)="onChangeIlceSelect($event.target.value)"
+        required
+        [(ngModel)]="model.countyID" name="selectedIlce">
+          <option selected>İlçe Seçiniz</option>
+          <option *ngFor="let item of ilceler; index as i"[value]='item.countyID'>{{item.countyName}}</option>
+        </select>
+
+        <label for="inputMahalle" class="mt-5" >Mahalle Seçiniz</label>
+        <select id="inputMahalle" class="form-select"
+        required
+        [(ngModel)]="model.mahalleID" name="selectedMahalle">>
+          <option selected>Mahalle Seçin</option>
+          <option *ngFor="let item of mahalleler; index as i"[value]='item.mahalleID'>{{item.mahalleName}}</option>
+        </select>
+
+        <input type="number" class="form-control mt-5" placeholder="Ada"
+        required min="1"
+        [(ngModel)]="model.ada" name="ada"
+        id="inputAda" #Ada="ngModel">
+
+        <div *ngIf="Ada.invalid && (Ada.dirty || Ada.touched)"
+        class="alert alert-danger">
+        <div *ngIf="Ada.errors.min">
+          Ada 1 den kucuk olamaz
+        </div>
+        <div *ngIf="Ada.errors.required">
+          Ada bilgisi girilmelidir
+        </div>
+      </div>
+
+        <input type="number" class="form-control mt-5" placeholder="Parsel"
+        required
+        [(ngModel)]="model.parsel" name="parsel"
+        id="inputParsel">
+        <input type="text" class="form-control mt-5" placeholder="Nitelik"
+        required
+        [(ngModel)]="model.nitelik" name="nitelik"
+        id="inputNitelik">
+      </div>
+
+      <div class="form-group col-md-6">
+        <input type="text"  class="form-control mt-5 input-lg" style="height: 60%;"
+        required
+        [(ngModel)]="model.adres" name="adres"
+        placeholder="Adres" id="inputAdres">
+        <button type="submit" style="width:100%; height: 15%;" class="btn btn-outline-secondary btn-light mt-5">Taşınmaz Ekle</button>
+      </div>
+    </div>
+  </form>
+</div>

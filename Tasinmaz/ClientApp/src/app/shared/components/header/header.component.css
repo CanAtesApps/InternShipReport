@@ -1,0 +1,8 @@
+#navlink{
+  border-right: 1px solid black;
+  margin-left: 5px;
+  padding-right: 5px;
+}
+.headerNav li{
+  cursor: pointer;
+}

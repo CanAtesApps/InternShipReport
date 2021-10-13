@@ -1,0 +1,26 @@
+<head>
+  <link
+    href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+    rel="stylesheet"  type='text/css'>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="margin-left:7px ;" href="#">Taşınmaz</a>
+      <ul class="navbar-nav headerNav" *ngIf="authService.loggedIn();" >
+        <li class="navbar-nav" id="navlink" *ngIf="authService.isAdmin">
+          <a class="nav-link active" [routerLink]="['kullanici']" routerLinkActive="router-link-active">Kullanıcı</a>
+        </li>
+        <li class="navbar-nav" id="navlink" *ngIf="authService.isAdmin" >
+          <a class="nav-link active" [routerLink]="['log']" routerLinkActive="router-link-active">Log</a>
+        </li>
+        <li class="navbar-nav" id="navlink"  >
+          <a class="nav-link active" [routerLink]="['tasinmaz']" routerLinkActive="router-link-active">Taşınmaz</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#"(click)='logout()'>Çıkış</a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+

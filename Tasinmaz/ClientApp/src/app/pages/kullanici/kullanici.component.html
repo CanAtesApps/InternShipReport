@@ -1,0 +1,221 @@
+<head>
+  <link
+    href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+    rel="stylesheet"  type='text/css'>
+</head>
+<div class="container">
+
+  <div class="row mt-3" >
+    <div class="col-md-10">
+      <div class="input-group ">
+
+        <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Aranacak kelimeyi girin">
+        <button class="btn btn-outline-secondary btn-light" (click)="filtrele()"><span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span></button>
+      </div>
+  </div>
+    <div class="col-md-2 ml-auto" >
+      <button type="button" style="width:100%" class="btn btn-outline-secondary btn-light" data-toggle="modal" data-target="#kullaniciEkle" (click)='resetForm()' >Kullanici Ekle</button>
+    </div>
+  </div>
+
+  <table class="table table-light mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th >Ad</th>
+        <th >Soyad</th>
+        <th >Email</th>
+        <th >Rol</th>
+        <th ></th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let user of kullanicilar ; index as i" >
+        <td>{{user.ad}}</td>
+        <td>{{user.soyad}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.rol}}</td>
+        <td>
+          <div class="btn-group justify-content-center" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-secondary" (click)="selectedUserUpdate(user)" data-toggle="modal" data-target="#kullaniciDuzenle">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary" (click)="selectedUser(user)" data-toggle="modal" data-target="#kullaniciSil">Sil</button>
+            <button type="button" class="btn btn-outline-secondary"(click)="raporla(user)">Raporla</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <select id="inputPage"
+            class="form-control"
+            (change)="onChangeSelect($event.target.value)">
+            <option [value]=0>Sayfa Secin</option>
+            <option *ngFor="let item of counter(); index as i"[value]='item'>{{item}}</option>
+        </select>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="previousPage()"  [disabled]="previousButtonDisable()" >Önceki</button>
+      </li>
+        <li class="page-item">
+          <a class="page-link" >{{currentPage}}</a>
+        </li>
+      <li class="page-item">
+        <button class="page-link" (click)="nextPage()" [disabled]="nextButtonDisable()">Sonraki</button>
+      </li>
+    </ul>
+  </nav>
+ </div>
+
+<!-- ekleme Modal -->
+<div class="modal fade" id="kullaniciEkle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kullanici Ekle</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="kullaniciForm" (ngSubmit)="onSubmitCreateUser()" class="form">
+          <input type="text"
+            formControlName="ad"
+            class="form-control mt-3"
+            placeholder="Isim"
+            [ngClass]="{ 'is-invalid': submitted && f.ad.errors }" />
+
+            <input type="text"
+            formControlName="soyad"
+            class="form-control mt-3"
+            placeholder="SoyIsim "
+            [ngClass]="{ 'is-invalid': submitted && f.soyad.errors }" />
+
+            <input type="email"
+            formControlName="email"
+            class="form-control mt-3"
+            placeholder="KullaniciAdi(email)"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+
+            <input type="password"
+            formControlName="password"
+            class="form-control mt-3"
+            placeholder="KullaniciSifresi"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+
+            <div class="form-group mt-3">
+              <label for="rol" >Rol Seciniz</label>
+              <select id="rol"
+                formControlName="rol"
+                class="form-control "
+                placeholder="Rol Secin"
+                [ngClass]="{ 'is-invalid': submitted && f.rol.errors }">
+                <option [value]=false>Kullanici</option>
+                <option [value]=true >Admin</option>
+              </select>
+            </div>
+            <div class="modal-footer d-flex justify-content-center form-group ">
+              <button type="submit" class="btn btn-secondary">Kullanici Ekle</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Iptal</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="selectedKullanici">
+  <!-- guncelleme Modal -->
+  <div class="modal fade" id="kullaniciDuzenle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kullanici Duzenle</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="kullaniciDuzenleForm" (ngSubmit)="onSubmitCreateUser()" class="form">
+            <input type="text"
+              formControlName="ad"
+              class="form-control mt-3"
+              value={{selectedKullanici.ad}}
+              [ngClass]="{ 'is-invalid': submittedUpdate && GuncelleForm.ad.errors }" />
+
+              <input type="text"
+              formControlName="soyad"
+              class="form-control mt-3"
+              value={{selectedKullanici.soyad}}
+              placeholder="SoyIsim "
+              [ngClass]="{ 'is-invalid': submittedUpdate && GuncelleForm.soyad.errors }" />
+
+              <input type="email"
+              formControlName="email"
+              class="form-control mt-3"
+              value={{selectedKullanici.email}}
+              [ngClass]="{ 'is-invalid': submittedUpdate && GuncelleForm.email.errors }" />
+
+
+            <input type="password"
+            formControlName="password"
+            class="form-control mt-3"
+            placeholder="Yeni Sifreyi Girin"
+            [ngClass]="{ 'is-invalid': submittedUpdate && GuncelleForm.password.errors }" />
+
+              <div class="form-group mt-3">
+                <label for="rol" >Rol Seciniz</label>
+                <select id="rol"
+                  formControlName="rol"
+                  class="form-control "
+                  placeholder="Rol Secin"
+                  value={{selectedKullanici.rol}}
+                  [ngClass]="{ 'is-invalid': submittedUpdate && GuncelleForm.rol.errors }">
+                  <option >kullanici</option>
+                  <option >admin</option>
+                </select>
+              </div>
+              <div class="modal-footer d-flex justify-content-center form-group ">
+                <button type="submit" class="btn btn-secondary" (click)="updateUser()" >Kullanici Guncelle</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Iptal</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedKullanici">
+  <!-- silme Modal -->
+  <div class="modal fade" id="kullaniciSil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kullanici Silme</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Kullaniciyi silmek istediginze emin misiniz?</p>
+        <div class="container">
+          <ul class="list-group" *ngIf="selectedKullanici" style="width:inherit">
+              <li class="list-group-item">{{selectedKullanici.userID}}</li>
+              <li class="list-group-item">{{selectedKullanici.ad}}</li>
+              <li class="list-group-item">{{selectedKullanici.soyad}}</li>
+              <li class="list-group-item">{{selectedKullanici.email}}</li>
+              <li class="list-group-item">{{selectedKullanici.rol}}</li>
+          </ul>
+        </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center ">
+          <button type="button" class="btn btn-danger" (click)="confirmedDelete()" data-dismiss="modal">Sil</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Iptal</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

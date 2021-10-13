@@ -1,0 +1,106 @@
+<div class="container mt-5" >
+  <form [formGroup]="tasinmazForm" (ngSubmit)="onSubmit(f)" class="form">
+    <div class="row mt-3" >
+      <div class="form-group col-md-6">
+
+            <label for="inputIl" >Il Seciniz</label>
+            <select id="inputIl"
+                formControlName="selectedIl"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.selectedIl.errors }"
+                [value] = "selectedTasinmaz.cityName"
+                (change)="onChangeIlSelect($event.target.value)">
+                <option  *ngFor="let item of iller; index as i" [value]='item.cityName'>{{item.cityName}}</option>
+            </select>
+
+
+        <div class="mt-5">
+          <label for="inputIlce" >Ilce Seciniz</label>
+          <select id="inputIlce"
+              formControlName="selectedIlce"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.selectedIlce.errors }"
+              [value]="selectedTasinmaz.countyName"
+              (change)="onChangeIlceSelect($event.target.value)">
+              <option selected>Ilce Seciniz</option>
+              <option *ngFor="let item of ilceler; index as i"[value]='item.countyName'>{{item.countyName}}</option>
+          </select>
+        </div>
+
+        <div class="mt-5">
+          <label for="inputMahalle" >Mahalle Seciniz</label>
+          <select id="inputMahalle"
+              formControlName="selectedMahalle"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.selectedMahalle.errors }"
+              [value]="selectedTasinmaz.areaName"
+              (change)="onChangeMahalleSelect($event.target.value)">
+              <option selected>Mahalle seciniz</option>
+              <option *ngFor="let item of mahalleler; index as i"[value]='item.mahalleName'>{{item.mahalleName}}</option>
+          </select>
+        </div>
+
+        <div class="mt-5">
+          <input type="number"
+            formControlName="ada"
+            class="form-control"
+            placeholder="Ada"
+            [ngClass]="{ 'is-invalid': submitted && f.ada.errors }" />
+          <div *ngIf="submitted && f.ada.errors" class="invalid-feedback">
+            <div *ngIf="f.ada.errors.required">Ada bos birakilamaz</div>
+          </div>
+          <div *ngIf="submitted && f.ada.errors" class="invalid-feedback">
+            <div *ngIf="f.ada.errors.min">Ada 1 den kucuk olamaz</div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <input type="number"
+            formControlName="parsel"
+            class="form-control"
+            placeholder="Parsel"
+            [ngClass]="{ 'is-invalid': submitted && f.parsel.errors }" />
+          <div *ngIf="submitted && f.parsel.errors" class="invalid-feedback">
+            <div *ngIf="f.parsel.errors.required">Parsel bos birakilamaz</div>
+          </div>
+          <div *ngIf="submitted && f.parsel.errors" class="invalid-feedback">
+            <div *ngIf="f.parsel.errors.min">Parsel 1 den kucuk olamaz</div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <input type="text"
+           formControlName="nitelik"
+           class="form-control"
+           placeholder="Nitelik"
+           [ngClass]="{ 'is-invalid': submitted && f.nitelik.errors }" />
+          <div *ngIf="submitted && f.nitelik.errors" class="invalid-feedback">
+            <div *ngIf="f.nitelik.errors.required">Nitelik bos birakilamaz</div>
+          </div>
+          <div *ngIf="submitted && f.nitelik.errors" class="invalid-feedback">
+            <div *ngIf="f.nitelik.errors.minlength">Nitelik bilgisi 3 harfden den kucuk olamaz</div>
+          </div>
+        </div>
+      </div>
+        <div class="form-group col-md-6">
+
+            <input type="text"
+            formControlName="adres"
+            class="form-control input-lg"
+            style="height: 60%;"
+            placeholder="Adres"
+            [ngClass]="{ 'is-invalid': submitted && f.adres.errors }" />
+            <div *ngIf="submitted && f.adres.errors" class="invalid-feedback">
+              <div *ngIf="f.adres.errors.required">Adres bos birakilamaz</div>
+            </div>
+            <div *ngIf="submitted && f.adres.errors" class="invalid-feedback">
+              <div *ngIf="f.adres.errors.minlength">Adres bilgisi 6 harfden den kucuk olamaz</div>
+            </div>
+
+            <button class="btn btn-outline-secondary btn-light mt-5 "
+              style="width:100%; height: 15%;">Guncelle
+            </button>
+        </div>
+    </div>
+  </form>
+</div>

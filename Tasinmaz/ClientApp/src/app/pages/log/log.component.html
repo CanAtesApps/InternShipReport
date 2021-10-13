@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="row mt-3" >
+    <div class="col-md-10">
+      <div class="input-group ">
+        <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Aranacak kelimeyi girin">
+        <button class="btn btn-outline-secondary btn-light" (click)="filtrele()"><span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span></button>
+      </div>
+  </div>
+    <div class="col-md-2 ml-auto" >
+      <button type="button" style="width:100%" class="btn btn-outline-secondary btn-light"(click)="raporla()">Raporla</button>
+    </div>
+  </div>
+
+  <table class="table table-light mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th >Log Detayi</th>
+        <th >Durumu</th>
+        <th >Log Zamani</th>
+        <th >Log Ip</th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let log of logs ">
+        <td>{{log.logDetails}}</td>
+        <td *ngIf="log.logSuccess">Basarili</td>
+        <td *ngIf="!log.logSuccess">Basarisiz</td>
+        <td>{{log.logTime}}</td>
+        <td>{{log.ipAdress}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+          <select id="inputPage"
+              class="form-control"
+              (change)="onChangeSelect($event.target.value)">
+              <option [value]=0>Sayfa Secin</option>
+              <option *ngFor="let item of counter(); index as i"[value]='item'>{{item}}</option>
+          </select>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="previousPage()"  [disabled]="previousButtonDisable()" >Önceki</button>
+      </li>
+        <li class="page-item">
+          <a class="page-link" >{{currentPage}}</a>
+        </li>
+      <li class="page-item">
+        <button class="page-link" (click)="nextPage()" [disabled]="nextButtonDisable()">Sonraki</button>
+      </li>
+    </ul>
+  </nav>
+ </div>

@@ -1,0 +1,19 @@
+<div class="wrapper fadeInDown" style="margin-top:15%;">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+     <h3 style="margin-top:5px;">Taşınmaz Giriş</h3>
+    </div>
+
+    <!-- Login Form -->
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <input type="text" id="login" class="fadeIn second" name="userName"  [(ngModel)]="loginInfo.username" placeholder="Kullanıcı Adı">
+      <input type="password" id="password" class="fadeIn third" name="password"[(ngModel)]="loginInfo.password" placeholder="Kullanıcı Parolası">
+      <br>
+      <input type="submit" [disabled]="f.invalid  "class="fadeIn fourth" value="Giriş">
+    </form>
+
+  </div>
+</div>
